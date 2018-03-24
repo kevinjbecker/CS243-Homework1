@@ -1,0 +1,74 @@
+Lab 1: System Intro
+Activity 1: questions1.txt, warning.c : 30 points total
+Name: Kevin Becker
+
+1. When you first log in, what is the absolute path of your home directory?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    /home/stu9/s16/kjb2503
+
+2. What command will display the contents of your current
+working directory, so that it shows the difference between
+files and directories? SHOW THE FULL COMMAND.
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    ls -l
+
+3. What command would you use to change your working directory from
+your home directory to the existing subdirectory named Courses?
+SHOW THE FULL COMMAND.
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    cd Courses
+
+4. Within the Courses/ subdirectory, what command would you use to
+create the subdirectory named csci243 and SHOW THE FULL COMMAND.
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    mkdir csci243
+
+5. When warning.c is compiled as: 
+        gcc -c warning.c
+    There is no indication of any warnings/problems.
+    
+    a.) What compiler flag is used to enable the display of warnings?
+    
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+        -Wall (but if you want all the warnings you can use -Wextra in addition to -Wall)
+    
+    b.) In your own words, explain all warnings from compiling warning.c.
+    
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+        The first warning is -Wunused-variable which is basically saying that while attempting
+        compile the program, gcc found a variable which is set but never used. (mostly just a
+        memory alert).
+        The next one is -Wmain which is saying that when creating a 'main' function, it can 
+        either have 2 parameters, or 0 parameters. In this case it found 1 and thus generated
+        a -Wmain warning.
+        Next is another -Wunused-variable (for variable 'x' within main) which is again set but
+        never used.
+        Then we get another unused variable warning for argc in the main function.
+        Lastly we get to -Wreturn-type which is saying that in a function which states it has
+        a non-void return value (a.k.a. somewhere a 'return' statement should be found), there
+        is no return. Thus when the function completes but no return statement was found, the
+        -Wreturn-type warning is created.
+    
+    c.) Fix warning.c so it compiles without warning and runs correctly.
+
+	(Your answer is the submitted code.)
+
+6. What compiler flag compiles C programs using the ISO C99 standard?
+
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    -std=c99
+   
+7. Put the four steps of compilation process into their proper order from
+first to last.
+
+    A. Link
+    B. Assemble
+    C. Preprocess
+    D. Compile
+    
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    Preprocess, Compile, Assemble, Link. [Which is: C, D, B, A]

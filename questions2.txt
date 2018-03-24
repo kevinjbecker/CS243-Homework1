@@ -1,0 +1,27 @@
+Lab 1: System Intro
+Activity 2: questions2.txt, main/circle code : 30 points total
+Name: Kevin Becker
+
+8. Given the program files main.c, circle.h and circle.c:
+
+    a.) What commands will compile the source files into object files?
+        Show the FULL command.
+        
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+        gcc -std=c99 -Wall -Wextra -pedantic -c main.c circle.c
+        
+    b.) What command will link the object files into an executable named broken?
+        Show the FULL command.
+        
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+        gcc -std=c99 -o broken main.o circle.o
+        
+    c.) Why does the program compile but fail to link?
+    
+        <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+        The circle.h file contains a declaration for the function "getArea(int);".
+        This means that any program which includes the header circle.h is promised
+        a getArea(int) function somwhere, as such it can compile. That being said, 
+        when trying to link circle.c and main.c, there is no implementation for 
+        the function and linking fails. The solution was to change the function 
+        "getAreas(int)" in circle.c to "getArea(int)" (removing the "s").
